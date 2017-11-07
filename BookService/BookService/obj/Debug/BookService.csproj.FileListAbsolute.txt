@@ -1,0 +1,5 @@
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\BookService\bin\Debug\BookService.dll
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\BookService\bin\Debug\BookService.pdb
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\BookService\obj\Debug\BookService.csprojResolveAssemblyReference.cache
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\BookService\obj\Debug\BookService.dll
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\BookService\obj\Debug\BookService.pdb

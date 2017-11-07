@@ -1,0 +1,8 @@
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\bin\Debug\WorkExample.exe.config
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\bin\Debug\WorkExample.exe
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\bin\Debug\WorkExample.pdb
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\obj\Debug\WorkExample.csprojResolveAssemblyReference.cache
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\obj\Debug\WorkExample.exe
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\obj\Debug\WorkExample.pdb
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\bin\Debug\BookService.dll
+C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BookService\WorkExample\bin\Debug\BookService.pdb
