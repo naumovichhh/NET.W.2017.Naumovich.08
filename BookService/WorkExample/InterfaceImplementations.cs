@@ -13,7 +13,7 @@ namespace Day8
             string strAuthor;
             try
             {
-                strAuthor = (string)author;
+                strAuthor = author;
             }
             catch
             {
@@ -35,7 +35,7 @@ namespace Day8
             int intPrice;
             try
             {
-                intPrice = (int)price;
+                intPrice = price;
             }
             catch
             {

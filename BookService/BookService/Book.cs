@@ -63,8 +63,6 @@ namespace Day8
                 Year.GetHashCode() + Size.GetHashCode();
         }
 
-        public int Pevruk() => 8;
-
         public override bool Equals(object param)
         {
             Book otherBook = param as Book;
@@ -119,10 +117,5 @@ namespace Day8
                 return builder.ToString();
             }
         }
-    }
-
-    public enum BookInfo
-    {
-        Isbn, Title, Author, Publishing, Year, Size, Price
     }
 }
