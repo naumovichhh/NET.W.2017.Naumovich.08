@@ -1,0 +1,5 @@
+c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\bin\Debug\BankAccount.dll
+c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\bin\Debug\BankAccount.pdb
+c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\obj\Debug\BankAccount.csprojResolveAssemblyReference.cache
+c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\obj\Debug\BankAccount.dll
+c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\obj\Debug\BankAccount.pdb
