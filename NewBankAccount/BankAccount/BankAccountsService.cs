@@ -1,141 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
-
-namespace Day8
+﻿namespace Day9
 {
-    public static class BankAccountsService
+    public class BankAccountsService
     {
-        public static void CreateAccount(BankAccount account)
+        private IStorage storage;
+
+        public BankAccountsService(IStorage storage)
         {
-            using (var writer = new BinaryWriter(
-                File.Open(account.Id.ToString(), FileMode.Create)))
-            {
-                writer.Write(account.Id);
-                writer.Write(account.Owner.Name);
-                writer.Write(account.Owner.Surname);
-                writer.Write(account.Balance);
-                writer.Write(account.Bonuses);
-                writer.Write(account.AccountType);
-            }
+            this.storage = storage;
         }
 
-        public static void CloseAccount(ulong id)
+        public ulong CreateAccount(string name, string surname, IAccountGenerator generator)
         {
-            try
-            {
-                File.Delete(id.ToString());
-            }
-            catch
-            {
-                throw new Exception("Account doesn't exist");
-            }
+            var account = generator.Generate(name, surname, storage);
+            storage.StoreAccount(account);
+            return account.Id;
         }
 
-        public static BankAccount GetAccount(ulong id)
+        public void CloseAccount(ulong id)
         {
-            BankAccount account;
-            try
-            {
-                using (var reader = new BinaryReader(File.OpenRead(id.ToString())))
-                {
-                    ulong s_id = reader.ReadUInt64();
-                    string name = reader.ReadString();
-                    string surname = reader.ReadString();
-                    double balance = reader.ReadDouble();
-                    double bonuses = reader.ReadDouble();
-                    string accountType = reader.ReadString();
-                    Assembly asm = Assembly.GetExecutingAssembly();
-                    Type type = asm.GetType(accountType);
-                    object accTypeInstance = Activator.CreateInstance(type);
-                    account = new BankAccount(s_id, new Person(name, surname),
-                        (IAccountType)accTypeInstance, balance, bonuses);
-                }
-                return account;
-            }
-            catch (FileNotFoundException)
-            {
-                throw new Exception("Account doesn't exist");
-            }
+            storage.DeleteAccount(id);
         }
 
-        public static void Withdraw(ulong id, int amount)
+        public void Withdraw(ulong id, int amount)
         {
-            BankAccount account;
-            try
-            {
-                using (var reader = new BinaryReader(File.OpenRead(id.ToString())))
-                {
-                    ulong s_id = reader.ReadUInt64();
-                    string name = reader.ReadString();
-                    string surname = reader.ReadString();
-                    double balance = reader.ReadDouble();
-                    double bonuses = reader.ReadDouble();
-                    string accountType = reader.ReadString();
-                    Assembly asm = Assembly.GetExecutingAssembly();
-                    Type type = asm.GetType(accountType);
-                    object accTypeInstance = Activator.CreateInstance(type);
-                    account = new BankAccount(s_id, new Person(name, surname),
-                        (IAccountType)accTypeInstance, balance, bonuses);
-                }
-                account.Withdraw(amount);
-                using (var writer = new BinaryWriter(
-                    File.Open(id.ToString(), FileMode.Create)))
-                {
-                    writer.Write(account.Id);
-                    writer.Write(account.Owner.Name);
-                    writer.Write(account.Owner.Surname);
-                    writer.Write(account.Balance);
-                    writer.Write(account.Bonuses);
-                    writer.Write(account.AccountType);
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                throw new Exception("Account doesn't exist");
-            }
+            var account = storage.LoadAccount(id);
+            account.Withdraw(amount);
+            storage.StoreAccount(account);
         }
 
-        public static void Put(ulong id, int amount)
+        public void Deposit(ulong id, int amount)
         {
-            BankAccount account;
-            try
-            {
-                using (var reader = new BinaryReader(File.OpenRead(id.ToString())))
-                {
-                    ulong s_id = reader.ReadUInt64();
-                    string name = reader.ReadString();
-                    string surname = reader.ReadString();
-                    double balance = reader.ReadDouble();
-                    double bonuses = reader.ReadDouble();
-                    string accountType = reader.ReadString();
-                    Assembly asm = Assembly.GetExecutingAssembly();
-                    Type type = asm.GetType(accountType);
-                    object accTypeInstance = Activator.CreateInstance(type);
-                    account = new BankAccount(s_id, new Person(name, surname),
-                        (IAccountType)accTypeInstance, balance, bonuses);
-                }
-                account.Put(amount);
-                using (var writer = new BinaryWriter(
-                    File.Open(id.ToString(), FileMode.Create)))
-                {
-                    writer.Write(account.Id);
-                    writer.Write(account.Owner.Name);
-                    writer.Write(account.Owner.Surname);
-                    writer.Write(account.Balance);
-                    writer.Write(account.Bonuses);
-                    writer.Write(account.AccountType);
-                }
-            }
-            catch (FileNotFoundException)
-            {
-                throw new Exception("Account doesn't exist");
-            }
+            var account = storage.LoadAccount(id);
+            account.Deposit(amount);
+            storage.StoreAccount(account);
         }
-        
+
+        public BankAccount GetAccountInfo(ulong id)
+        {
+            return storage.LoadAccount(id);
+        }
     }
 }

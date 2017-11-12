@@ -6,3 +6,11 @@ C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BankAccount\AtWor
 C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BankAccount\AtWork\bin\Debug\BankAccount.pdb
 C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BankAccount\AtWork\obj\Debug\AtWork.exe
 C:\Users\Роман\documents\visual studio 2017\Projects\EPAM\BankAccount\AtWork\obj\Debug\AtWork.pdb
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\bin\Debug\AtWork.exe.config
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\bin\Debug\AtWork.exe
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\bin\Debug\AtWork.pdb
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\bin\Debug\BankAccount.dll
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\bin\Debug\BankAccount.pdb
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\obj\Debug\AtWork.csprojResolveAssemblyReference.cache
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\obj\Debug\AtWork.exe
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\AtWork\obj\Debug\AtWork.pdb

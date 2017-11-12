@@ -3,3 +3,8 @@ c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankA
 c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\obj\Debug\BankAccount.csprojResolveAssemblyReference.cache
 c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\obj\Debug\BankAccount.dll
 c:\users\роман\documents\visual studio 2017\Projects\EPAM\BankAccount\BankAccount\obj\Debug\BankAccount.pdb
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\BankAccount\bin\Debug\BankAccount.dll
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\BankAccount\bin\Debug\BankAccount.pdb
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\BankAccount\obj\Debug\BankAccount.csprojResolveAssemblyReference.cache
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\BankAccount\obj\Debug\BankAccount.dll
+C:\Users\Роман\Documents\Visual Studio 2017\Projects\epam\NewBankAccount\BankAccount\obj\Debug\BankAccount.pdb

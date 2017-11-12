@@ -40,9 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountTypes.cs" />
+    <Compile Include="AccountTypeNotFoundException.cs" />
+    <Compile Include="DefaultAccount.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="BankAccountsService.cs" />
+    <Compile Include="DefaultAccountGenerator.cs" />
+    <Compile Include="InvalidAccountIdException.cs" />
+    <Compile Include="GoldAccount.cs" />
+    <Compile Include="IAccountGenerator.cs" />
+    <Compile Include="IStorage.cs" />
+    <Compile Include="PlatinumAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

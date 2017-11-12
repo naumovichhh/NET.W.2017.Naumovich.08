@@ -1,74 +1,87 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Day8
+namespace Day9
 {
-    public class BankAccount
+    public abstract class BankAccount
     {
-        public BankAccount(ulong newId, Person newOwner, 
-            IAccountType accType, double newBalance = 0, double newBonuses = 0)
-        {
-            id = newId;
-            owner = newOwner;
-            balance = newBalance;
-            accountType = accType;
-            bonuses = newBonuses;
-        }
-
-        public void Withdraw(double amount)
-        {
-            if (balance - amount < 0)
-                throw new Exception("Not enough money");
-            balance -= amount;
-            accountType.ProcessBonuses(this, amount);
-        }
-
-        public void Put(double amount)
-        {
-            balance += amount;
-            accountType.ProcessBonuses(this, amount);
-        }
-
-        public void ProcessBonuses(double amount)
-        {
-            bonuses += amount;
-        }
-
-        public IAccountType type;
-        public ulong Id { get { return id; } }
-        public Person Owner { get { return owner; } }
-        public double Balance { get { return balance; } }
-        public double Bonuses { get { return bonuses; } }
-        public string AccountType { get { return accountType.ToString(); } }
-
-        IAccountType accountType;
         private ulong id;
         private Person owner;
         private double balance;
         private double bonuses;
-    }
 
-    public class Person
-    {
-        public Person(string name, string surname)
+        public BankAccount(ulong id, Person owner, double balance, double bonuses)
         {
-            this.name = name;
-            this.surname = surname;
+            this.id = id;
+            this.owner = owner;
+            this.balance = balance;
+            this.bonuses = bonuses;
         }
 
-        public string Name
+        public ulong Id
         {
-            get { return name; }
-        }
-        public string Surname
-        {
-            get { return surname; }
+            get { return id; }
+            protected set { id = value; }
         }
 
-        private string name;
-        private string surname;
+        public Person Owner
+        {
+            get { return owner; }
+            protected set { owner = value; }
+        }
+
+        public double Balance
+        {
+            get { return balance; }
+            protected set { balance = value; }
+        }
+
+        public double Bonuses
+        {
+            get { return bonuses; }
+            protected set { bonuses = value; }
+        }
+
+        public abstract void DepositBonuses(double amount);
+
+        public abstract void WithdrawBonuses(double amount);
+
+        public void Withdraw(double amount)
+        {
+            if (balance - amount < 0)
+            {
+                throw new Exception("Not enough money");
+            }
+
+            balance -= amount;
+            WithdrawBonuses(amount);
+        }
+
+        public void Deposit(double amount)
+        {
+            balance += amount;
+            DepositBonuses(amount);
+        }
+
+        public class Person
+        {
+            private string name;
+            private string surname;
+
+            public Person(string name, string surname)
+            {
+                this.name = name;
+                this.surname = surname;
+            }
+
+            public string Name
+            {
+                get { return name; }
+            }
+
+            public string Surname
+            {
+                get { return surname; }
+            }
+        }
     }
 }
